@@ -8,8 +8,13 @@ class LinkedinSpider(scrapy.Spider):
     #allowed_domains = ['www.linkedin.com']
     #start_urls = ['https://www.linkedin.com/jobs/search?keywords=Data%20Scientist"&"location=Estados%20Unidos"&"locationId="&"geoId=103644278"&"f_TPR=r86400"&"f_JT=C%2CF"&"f_E=4"&"f_WT=2"&"position=1"&"pageNum=0']
     #start_urls = ['https://www.linkedin.com/jobs/search/?keywords=Data%20Scientist&location=Estados%20Unidos&locationId=&geoId=103644278&f_TPR=r86400&f_JT=C%2CT&f_E=4&position=1&pageNum=0']
-    # 1 week = f_TPR=r604800               
-    #need to add a scroll method for handle wirh javascript
+
+    # Data Scientist - last week - contractor and temp - mid level and senior - remote
+    # https://www.linkedin.com/jobs/search/?keywords=Data%20Scientist&location=Estados%20Unidos&locationId=&geoId=103644278&f_TPR=r604800&f_JT=C%2CT&f_E=4&f_WT=2&position=1&pageNum=0
+             
+    #Get all ids
+    # 1 week = f_TPR=r604800   
+    # 24 hours ago = f_TPR=r86400   
     start_urls = ['https://www.linkedin.com/jobs/search/?keywords=Data%20Scientist&location=Estados%20Unidos&locationId=&geoId=103644278&f_TPR=r86400&f_JT=C%2CT&f_E=4&position=1&pageNum=2']
     def parse(self, response):
         
