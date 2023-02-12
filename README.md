@@ -88,7 +88,8 @@ With the unique ID of each job it was possible to access a detail page from wher
 
 ### Data extraction
 
-# ![alt text](https://github.com/lucasvascrocha/yellow_pages_scrap/blob/main/image_example_target.png)  
+ ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_01.jpg)  
+ ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_02.jpg)  
 
 1. **What data fields do I want extracted?**  
     1. job title  
