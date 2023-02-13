@@ -29,11 +29,13 @@ class LinkedinSpider(scrapy.Spider):
         list_of_start_number_disponible = []
         for i in range(total_number_of_pages_disponible):
             list_of_start_number_disponible.append(i * 25)
-        #get all job links disponible in an API link page
-        for start_page in list_of_start_number_disponible:
-           url_to_search_all_links= response.urljoin(f'https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Data%2BScientist&location=Estados%2BUnidos&locationId=&geoId=103644278&f_TPR=r604800&f_JT=C%2CT&f_E=4&f_WT=2&start={start_page}')
 
-           yield scrapy.Request(url = url_to_search_all_links, callback=self.link_capture)
+        #get all job links disponible in an API link page
+        #list_of_start_number_disponible = [0,25,50,75,100,125,150]
+        for start_page in list_of_start_number_disponible:
+            url_to_search_all_links= response.urljoin(f'https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Data%2BScientist&location=Estados%2BUnidos&locationId=&geoId=103644278&f_TPR=r604800&f_JT=C%2CT&f_E=4&f_WT=2&start={start_page}')
+
+            yield scrapy.Request(url = url_to_search_all_links, callback=self.link_capture)
         
     def link_capture(self, response):
 
@@ -43,12 +45,12 @@ class LinkedinSpider(scrapy.Spider):
         #extract id from link
         list_of_unique_id_jobs = []
         for l in range(len(link_job)):
-                list_of_unique_id_jobs.append(re.findall(r'\d{10}', link_job[l])[0])
+            list_of_unique_id_jobs.append(re.findall(r'\d{10}', link_job[l])[0])           
 
         #for each unique id, acess the details page and extract details info
+        #list_of_unique_id_jobs = [0,25,50,75,100,125,150]
         for id in list_of_unique_id_jobs:
-           time.sleep(2)
-
+           
            url_to_search= response.urljoin(f'https://www.linkedin.com/jobs/view/{id}')
 
            yield scrapy.Request(url = url_to_search, callback=self.details_capture)
@@ -57,19 +59,19 @@ class LinkedinSpider(scrapy.Spider):
     def details_capture(self, response):
 
         #get data and apply some text format
-        title = response.css("h1.top-card-layout__title::text").getall()[0].replace("\n", "").strip(),
-        location = response.css("span.topcard__flavor::text").getall()[2].replace("\n", "").strip()
-        company_name = response.css("a.topcard__org-name-link::text").get().replace("\n", "").strip()
-        position_name = response.css("h1.top-card-layout__title::text").get().replace("\n", "").strip()
-        experience_required = response.css("span.description__job-criteria-text::text").getall()[0].replace("\n", "").strip()
-        contract_type = response.css("span.description__job-criteria-text::text").getall()[1].replace("\n", "").strip()
-        function_name = response.css("span.description__job-criteria-text::text").getall()[2].replace("\n", "").strip()
-        company_sector = response.css("span.description__job-criteria-text::text").getall()[3].replace("\n", "").strip()
+        title = response.css("h1.top-card-layout__title::text").getall()#[0].replace("\n", "").strip(),
+        location = response.css("span.topcard__flavor::text").getall()[2]#.replace("\n", "").strip()
+        company_name = response.css("a.topcard__org-name-link::text").get()#.replace("\n", "").strip()
+        position_name = response.css("h1.top-card-layout__title::text").get()#.replace("\n", "").strip()
+        experience_required = response.css("span.description__job-criteria-text::text").getall()[0]#.replace("\n", "").strip()
+        contract_type = response.css("span.description__job-criteria-text::text").getall()[1]#.replace("\n", "").strip()
+        function_name = response.css("span.description__job-criteria-text::text").getall()[2]#.replace("\n", "").strip()
+        company_sector = response.css("span.description__job-criteria-text::text").getall()[3]#.replace("\n", "").strip()
         link_searched = response.url
 
         description = response.css("div.show-more-less-html__markup /*p::text").getall() 
-        clean = re.compile('<.*?>')
-        description = re.sub(clean, '', description[0]).replace('\n','').strip()
+        #clean = re.compile('<.*?>')
+        #description = re.sub(clean, '', description[0]).replace('\n','').strip()
 
 
         yield{
@@ -84,4 +86,6 @@ class LinkedinSpider(scrapy.Spider):
             'description': description,
             'link': link_searched
         }
+
+        time.sleep(10)
     
