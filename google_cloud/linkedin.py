@@ -1,11 +1,10 @@
 import scrapy
-import time
 import re
 import math
 import pandas as pd
 
 
-class LinkedinSpider(scrapy.Spider):
+class ExempleSpider(scrapy.Spider):
     name = 'linkedin'
     #allowed_domains = ['www.linkedin.com']
 
@@ -143,4 +142,3 @@ class LinkedinSpider(scrapy.Spider):
             'description': description,
             'link': link_searched
         }
-    
