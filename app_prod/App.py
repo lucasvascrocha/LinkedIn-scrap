@@ -29,9 +29,9 @@ from mypages import how_it_works
 
 #config
 st.set_page_config(page_title="Search Job", layout="wide")
-style.sidebarwidth()
-style.style_menu()
-style.style_0()
+#style.sidebarwidth()
+#style.style_menu()
+#style.style_0()
 
 
  # ----------------------------------DEFS -------------------------------------------------------------   
@@ -41,12 +41,12 @@ def main():
     #if login.check_password():
 
         #css design for all pages
-        #style.style_0()
+    style.style_0()
         #hide steamlit buttons
-        #style.hidden_menu_and_footer()
+    style.hidden_menu_and_footer()
         #hide steamlit buttons
         #sidebar width
-        #style.sidebarwidth()
+    style.sidebarwidth()
 
 
     with st.sidebar:
