@@ -224,6 +224,9 @@ def style_0():
         margin: 0px -1.5rem 0px 10px;
         /* margin: 0px -9.875rem 0px 145px; */
     }
+
+
+
     <style>
     """, unsafe_allow_html=True
     )
