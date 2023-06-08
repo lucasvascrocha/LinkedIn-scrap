@@ -241,6 +241,17 @@ def style_0():
     overflow: hidden;
     }
 
+    .css-163ttbj {
+    position: relative;
+    top: 2px;
+    background-color: rgb(250, 250, 250);
+    z-index: 999991;
+    min-width: 244px;
+    max-width: 550px;
+    transform: none;
+    transition: transform 300ms ease 0s, min-width 300ms ease 0s, max-width 300ms ease 0s;
+}
+
 
 
     <style>
