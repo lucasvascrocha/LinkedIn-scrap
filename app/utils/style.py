@@ -92,144 +92,145 @@ def style_0():
     st.markdown(
     """
     <style>
-    a{
-    color:rgb(0, 0, 0);
-    text-align: center;
-    font-size: 14px;
-    font-family: 'Bree Serif', serif;
-    
-    }
+        a{
+        color:rgb(0, 0, 0);
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Bree Serif', serif;
+        
+        }
 
-    p{
-    color:rgb(0, 0, 0);
-    text-align: center;
-    font-size: 14px;
-    font-family: 'Bree Serif', serif;
-    }
+        p{
+        color:rgb(0, 0, 0);
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Bree Serif', serif;
+        }
 
-    /* st.header */
-    .css-10trblm {
-    position: relative;
-    flex: 1 1 0%;
-    margin-left: calc(3rem);
-    color:rgb(56, 67, 191);
-    font-family: 'Bree Serif', serif;
-    font-weight: bold;
-    }
-
-    h3{
-    color:rgb(56, 67, 191);
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Bree Serif', serif;
-    }
-
-
-    /* Fonte st.metric */
-    [data-testid="stMetricValue"] {
-        font-size: 25px;
-    }  
-
-
-    /* Topo da págia para cor de BK #f0eeee  */
-    .css-po1uzv {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    height: 0.000rem;
-    /* background: rgb(240, 238, 238); */
-    background: rgb(228, 228, 247);
-    outline: none;
-    z-index: 999990;
-    display: block;
-    }
-
-    /* Topo da págia para cor de BK #fafafa  */
-    .css-11qlpl9 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    height: 0.00rem;
-    background: rgb(228, 228, 247);
-    outline: none;
-    z-index: 999990;
-    display: block;
-    }
-
-    .css-hxt7ib {
-    padding-top: 0rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    }
-
-    .css-12oz5g7 {
-    flex: 1 1 0%;
-    width: 100%;
-    padding: 0rem 1rem 10rem;
-    max-width: 46rem;
-    }
-
-    .st-b7 {
-        /* width: 600px; */
-        border-radius: 2.25rem;
-    }
-
-    .main-svg{
-        border-radius: 2.25rem;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        -webkit-box-flex: 1;
-        flex-grow: 1;
-        -webkit-box-align: stretch;  
-        align-items: stretch;
-    }
-
-    .plot-container.plotly{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        -webkit-box-flex: 1;
-        flex-grow: 1;
-        -webkit-box-align: stretch;  
-        align-items: stretch;
-
-    }
-
-    .stDataFrame {
-        border-radius: 10px;
-        background: rgb(255, 255, 255);
-        background-color: lightgrey;
-        color: white;   
+        /* st.header */
+        .css-10trblm {
+        position: relative;
+        flex: 1 1 0%;
+        margin-left: calc(3rem);
+        color:rgb(56, 67, 191);
+        font-family: 'Bree Serif', serif;
         font-weight: bold;
-    }
+        }
 
-    table, td { font-weight: 500;}
+        h3{
+        color:rgb(56, 67, 191);
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Bree Serif', serif;
+        }
 
-    
 
-    .css-a58qmi-EmotionIconBase {
-        vertical-align: middle;
-        overflow: hidden;
-        color: inherit;
-        fill: currentcolor;
-        display: inline-flex;
-        font-size: 1.25rem;
-        width: 1.25rem;
-        height: 1.25rem;
-        margin: 0px -1.5rem 0px 10px;
-        /* margin: 0px -9.875rem 0px 145px; */
-    }
+        /* Fonte st.metric */
+        [data-testid="stMetricValue"] {
+            font-size: 25px;
+        }  
 
-    .css-3r92b0 {
-        position: absolute;
-        background: rgb(240, 240, 240);
-        color: rgb(49, 51, 63);
-        inset: 0px;
-        overflow: hidden;
-    }
+
+        /* Topo da págia para cor de BK #f0eeee  */
+        .css-po1uzv {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: 0.000rem;
+        /* background: rgb(240, 238, 238); */
+        background: rgb(228, 228, 247);
+        outline: none;
+        z-index: 999990;
+        display: block;
+        }
+
+        /* Topo da págia para cor de BK #fafafa  */
+        .css-11qlpl9 {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: 0.00rem;
+        background: rgb(228, 228, 247);
+        outline: none;
+        z-index: 999990;
+        display: block;
+        }
+
+        .css-hxt7ib {
+        padding-top: 0rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        }
+
+        .css-12oz5g7 {
+        flex: 1 1 0%;
+        width: 100%;
+        padding: 0rem 1rem 10rem;
+        max-width: 46rem;
+        }
+
+        .st-b7 {
+            /* width: 600px; */
+            border-radius: 2.25rem;
+        }
+
+        .main-svg{
+            border-radius: 2.25rem;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            -webkit-box-align: stretch;  
+            align-items: stretch;
+        }
+
+        .plot-container.plotly{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            -webkit-box-align: stretch;  
+            align-items: stretch;
+
+        }
+
+        .stDataFrame {
+            border-radius: 10px;
+            background: rgb(255, 255, 255);
+            background-color: lightgrey;
+            color: white;   
+            font-weight: bold;
+        }
+
+        table, td { font-weight: 500;}
+
+        
+
+        .css-a58qmi-EmotionIconBase {
+            vertical-align: middle;
+            overflow: hidden;
+            color: inherit;
+            fill: currentcolor;
+            display: inline-flex;
+            font-size: 1.25rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            margin: 0px -1.5rem 0px 10px;
+            /* margin: 0px -9.875rem 0px 145px; */
+        }
+
+        .css-3r92b0 {
+            position: absolute;
+            background: rgb(240, 240, 240);
+            color: rgb(49, 51, 63);
+            inset: 0px;
+            overflow: hidden;
+        }
+
     <style>
 
     """, unsafe_allow_html=True
