@@ -233,6 +233,14 @@ def style_0():
         overflow: hidden;
     }
 
+    .css-fg4pbf {
+    position: absolute;
+    background: rgb(240, 240, 240);
+    color: rgb(49, 51, 63);
+    inset: 0px;
+    overflow: hidden;
+    }
+
 
 
     <style>
