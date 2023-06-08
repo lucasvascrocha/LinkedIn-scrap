@@ -9,5 +9,6 @@ def show_page(params):
 
     table = 'historical_data'
     df = functions.querybq(table)
-    st.write(df.info())
-    st.dataframe(df)
+    df_filtered = functions.build_aggrid_table(df.sort_values('now_datetime',ascending=False))
+    #st.write(df.info())
+    #st.dataframe(df)

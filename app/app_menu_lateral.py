@@ -1,11 +1,11 @@
  # ----------------------------------LIBS -------------------------------------------------------------   
 import streamlit as st
-# st.set_page_config(  # Alternate names: setup_page, page, layout
-# 	layout="wide",  # Can be "centered" or "wide". In the future also "dashboard", etc.
-# 	initial_sidebar_state="auto",  # Can be "auto", "expanded", "collapsed"
-# 	page_title=None,  # String or None. Strings get appended with "• Streamlit". 
-# 	page_icon=None,  # String, anything supported by st.image, or None.
-# )
+st.set_page_config(  # Alternate names: setup_page, page, layout
+	layout="wide",  # Can be "centered" or "wide". In the future also "dashboard", etc.
+	initial_sidebar_state="auto",  # Can be "auto", "expanded", "collapsed"
+	page_title=None,  # String or None. Strings get appended with "• Streamlit". 
+	page_icon=None,  # String, anything supported by st.image, or None.
+)
 
 
 #basic
@@ -27,7 +27,7 @@ from mypages import how_it_works
 
 
 #config
-st.set_page_config(page_title="Comercial Bix", layout="wide",initial_sidebar_state="auto")
+#st.set_page_config(page_title="Comercial Bix", layout="wide",initial_sidebar_state="auto")
 style.sidebarwidth()
 style.style_menu()
 style.style_0()

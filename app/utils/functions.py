@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 
 
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode,ColumnsAutoSizeMode
 #import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from google.oauth2 import service_account
@@ -41,9 +41,8 @@ def build_aggrid_table(df):
 
 
     gb = GridOptionsBuilder.from_dataframe(df)
-    gb.configure_pagination(paginationAutoPageSize=True) #Add pagination
     gb.configure_side_bar() #Add a sidebar
-    gb.configure_selection( use_checkbox=True, groupSelectsChildren="Group checkbox select children") #Enable multi-row selection
+    gb.configure_selection(use_checkbox=True) #Enable multi-row selection
     gridOptions = gb.build()
 
     grid_response = AgGrid(
@@ -53,8 +52,9 @@ def build_aggrid_table(df):
         update_mode='MODEL_CHANGED', 
         fit_columns_on_grid_load=False,
         enable_enterprise_modules=True,
+        columns_auto_size_mode=ColumnsAutoSizeMode.FIT_ALL_COLUMNS_TO_VIEW,
         width='100%',
-        height= 400
+        height= 450
     )
 
     data = grid_response['data']
