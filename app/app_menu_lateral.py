@@ -29,7 +29,7 @@ from mypages import how_it_works
 #config
 st.set_page_config(page_title="Search Job", layout="wide")
 #style.sidebarwidth()
-style.style_menu()
+#style.style_menu()
 style.style_0()
 
 
