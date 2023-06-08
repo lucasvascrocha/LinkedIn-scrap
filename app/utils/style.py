@@ -91,8 +91,6 @@ def up_bar():
 def style_0():
     st.markdown(
     """
-    
-
     <style>
     a{
     color:rgb(0, 0, 0);
@@ -158,7 +156,7 @@ def style_0():
     outline: none;
     z-index: 999990;
     display: block;
-}
+    }
 
     .css-hxt7ib {
     padding-top: 0rem;
@@ -259,7 +257,7 @@ def style_menu():
             header {visibility: hidden;}
             footer {visibility: hidden;}
             footer:after {
-                content:'Copyright Bix-tech 2023'; 
+                #content:'Copyright Bix-tech 2023'; 
                 visibility: visible;
                 display: block;
                 position: relative;
