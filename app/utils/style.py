@@ -231,6 +231,7 @@ def style_0():
         color: rgb(49, 51, 63);
         inset: 0px;
         overflow: hidden;
+        }
     <style>
 
     """, unsafe_allow_html=True
