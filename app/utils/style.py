@@ -230,17 +230,10 @@ def style_0():
             inset: 0px;
             overflow: hidden;
         }
-
-    <style>
+    </style>
 
     """, unsafe_allow_html=True
     )
-
-    # div[data-testid="stVerticalBlock"] > div:first-of-type {
-    # background-color: white;
-    # }
-
-    # table, th, td { font-size: 14px; }
 
 def style_menu():
     hide_streamlit_style = """
