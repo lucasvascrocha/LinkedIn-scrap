@@ -25,17 +25,6 @@ from mypages import historical_page
 from mypages import build_model
 from mypages import how_it_works
 
-custom_theme = """
-[theme]
-primaryColor = '#FF4B4B'
-backgroundColor = '#fafafa' #cinza original
-secondaryBackgroundColor = '#FFFFFF'
-textColor = '#31333F'
-font = "sans serif"
-"""
-
-# Aplica o tema personalizado
-st.set_theme(custom_theme)
 
 
 #config

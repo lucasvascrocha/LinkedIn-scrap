@@ -223,13 +223,8 @@ def style_0():
             /* margin: 0px -9.875rem 0px 145px; */
         }
 
-        .css-3r92b0 {
-            position: absolute;
-            background: rgb(240, 240, 240);
-            color: rgb(49, 51, 63);
-            inset: 0px;
-            overflow: hidden;
-        }
+
+
     </style>
 
     """, unsafe_allow_html=True
