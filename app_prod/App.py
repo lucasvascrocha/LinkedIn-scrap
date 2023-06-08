@@ -30,10 +30,10 @@ from mypages import how_it_works
 #config
 #st.set_page_config(page_title="Search Job", layout="wide")
 #style.sidebarwidth()
-#style.style_menu()
+style.style_menu()
 style.style_0()
-style.hidden_menu_and_footer()
-style.sidebarwidth()
+#style.hidden_menu_and_footer()
+#style.sidebarwidth()
 
 
  # ----------------------------------DEFS -------------------------------------------------------------   
@@ -53,7 +53,7 @@ def main():
 
     with st.sidebar:
     
-        #style.sidebarwidth() 
+        style.sidebarwidth() 
         #image = Image.open('logo_orange_2.jpg')
         #image = Image.open('images/bix_logo.png')
         #st.image(image, use_column_width=True)
