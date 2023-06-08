@@ -231,6 +231,7 @@ def style_0():
         color: rgb(49, 51, 63);
         inset: 0px;
         overflow: hidden;
+    }
 
 
 
@@ -418,7 +419,7 @@ def style_menu():
             header {visibility: hidden;}
             footer {visibility: hidden;}
             footer:after {
-                #content:'Copyright Bix-tech 2023'; 
+                content:'Copyright Rocha LV 2023'; 
                 visibility: visible;
                 display: block;
                 position: relative;
