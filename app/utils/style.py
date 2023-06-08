@@ -232,6 +232,13 @@ def style_0():
         inset: 0px;
         overflow: hidden;
         }
+    .css-ffhzg2 {
+    position: absolute;
+    background: rgb(240, 240, 240);
+    color: rgb(49, 51, 63);
+    inset: 0px;
+    overflow: hidden;
+    }
     <style>
 
     """, unsafe_allow_html=True
