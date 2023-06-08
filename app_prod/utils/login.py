@@ -10,7 +10,7 @@ def check_password():
             del st.session_state["password"]  # don't store password
         else:
             st.session_state["password_correct"] = False
-
+    
     col1, col2, col3 = st.columns([1,1,1])
 
     if "password_correct" not in st.session_state:
