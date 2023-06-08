@@ -1,11 +1,11 @@
  # ----------------------------------LIBS -------------------------------------------------------------   
 import streamlit as st
-# st.set_page_config(  # Alternate names: setup_page, page, layout
-# 	layout="wide",  # Can be "centered" or "wide". In the future also "dashboard", etc.
-# 	initial_sidebar_state="auto",  # Can be "auto", "expanded", "collapsed"
-# 	page_title=None,  # String or None. Strings get appended with "• Streamlit". 
-# 	page_icon=None,  # String, anything supported by st.image, or None.
-# )
+st.set_page_config(  # Alternate names: setup_page, page, layout
+	layout="wide",  # Can be "centered" or "wide". In the future also "dashboard", etc.
+	initial_sidebar_state="auto",  # Can be "auto", "expanded", "collapsed"
+	page_title=None,  # String or None. Strings get appended with "• Streamlit". 
+	page_icon=None,  # String, anything supported by st.image, or None.
+)
 
 
 #basic
@@ -28,10 +28,12 @@ from mypages import how_it_works
 
 
 #config
-st.set_page_config(page_title="Search Job", layout="wide")
+#st.set_page_config(page_title="Search Job", layout="wide")
 #style.sidebarwidth()
 #style.style_menu()
-#style.style_0()
+style.style_0()
+style.hidden_menu_and_footer()
+style.sidebarwidth()
 
 
  # ----------------------------------DEFS -------------------------------------------------------------   
@@ -41,12 +43,12 @@ def main():
     #if login.check_password():
 
         #css design for all pages
-    style.style_0()
+    #style.style_0()
         #hide steamlit buttons
-    style.hidden_menu_and_footer()
+    #style.hidden_menu_and_footer()
         #hide steamlit buttons
         #sidebar width
-    style.sidebarwidth()
+    #style.sidebarwidth()
 
 
     with st.sidebar:
