@@ -114,13 +114,13 @@ def style_0():
     position: relative;
     flex: 1 1 0%;
     margin-left: calc(3rem);
-    color:rgb(238, 153, 10);
+    color:rgb(56, 67, 191);
     font-family: 'Bree Serif', serif;
     font-weight: bold;
     }
 
     h3{
-    color:rgb(238, 153, 10);
+    color:rgb(56, 67, 191);
     text-align: center;
     font-size: 20px;
     font-family: 'Bree Serif', serif;
@@ -141,7 +141,7 @@ def style_0():
     right: 0px;
     height: 0.000rem;
     /* background: rgb(240, 238, 238); */
-    background: rgb(220, 224, 247);
+    background: rgb(228, 228, 247);
     outline: none;
     z-index: 999990;
     display: block;
@@ -154,7 +154,7 @@ def style_0():
     left: 0px;
     right: 0px;
     height: 0.00rem;
-    background: rgb(250, 250, 250);
+    background: rgb(228, 228, 247);
     outline: none;
     z-index: 999990;
     display: block;
@@ -224,6 +224,13 @@ def style_0():
         margin: 0px -1.5rem 0px 10px;
         /* margin: 0px -9.875rem 0px 145px; */
     }
+
+    .css-3r92b0 {
+        position: absolute;
+        background: rgb(240, 240, 240);
+        color: rgb(49, 51, 63);
+        inset: 0px;
+        overflow: hidden;
 
 
 
