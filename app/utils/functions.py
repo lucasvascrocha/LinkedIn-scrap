@@ -18,7 +18,7 @@ def querybq(table):
         data from big query 
     """
 
-    credentials = service_account.Credentials.from_service_account_file('utils/token_gcp.json', )    
+    credentials = service_account.Credentials.from_service_account_file('token_gcp.json', )    
     pandas_gbq.context.credentials = credentials
 
     if table == 'historical_data':
