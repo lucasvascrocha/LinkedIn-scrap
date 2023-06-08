@@ -52,7 +52,6 @@ def main():
     with st.sidebar:
     
         #style.sidebarwidth() 
-        over_theme = {'menu_background': '#3843bf'}
         #image = Image.open('logo_orange_2.jpg')
         #image = Image.open('images/bix_logo.png')
         #st.image(image, use_column_width=True)
