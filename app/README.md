@@ -1,2 +1,1 @@
-# template_streamlit
-templates default for streamlit - menus lateral ou superior
+# search_job_app

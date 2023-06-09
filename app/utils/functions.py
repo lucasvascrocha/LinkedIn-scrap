@@ -71,7 +71,8 @@ def build_aggrid_table(df):
         enable_enterprise_modules=True,
         columns_auto_size_mode=ColumnsAutoSizeMode.FIT_ALL_COLUMNS_TO_VIEW,
         width='100%',
-        height= 450
+        height= 450,
+        filters=True
     )
 
     data = grid_response['data']

@@ -1,8 +1,15 @@
 [theme]
 primaryColor = '#FF4B4B'
 backgroundColor = '#fafafa' #cinza original
+#backgroundColor = '#FFFFFF'
 secondaryBackgroundColor = '#FFFFFF'
 textColor = '#31333F'
+#font = "serif"
 font = "sans serif"
+#font = "Helvetica Neue"
+
+#font = "Display fonts"
+#font = "arial"
+#Spartan
 
 
