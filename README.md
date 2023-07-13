@@ -8,7 +8,7 @@ With this, we captured this data to develop more precise ways of searching for t
 
 * Solution:  
 Scrap all job data on the LinkedIn site automatically. 
-After collecting the data, try to develop a way to improve the search for relevant opportunities in a personalized way for each profile.  
+After collecting the data, use a filter strategy to optimize the search.  
 
 * Challenge:  
 There is not a single page with all opportunities.  
@@ -21,6 +21,20 @@ This avoided the need for more robust technologies, such as selenium.
 With this, it was possible to go through all the job pages that contained the generic information of each job.  
 With the captured generic information, it was possible to capture the unique ID of each job.  
 With the unique ID of each job, it was possible to access a detail page from where all the project information was extracted.  
+
+
+* Architecture and operation flowchart:  
+The arctechture choiced was google GCP.  
+For processing the scrapy library and all Python processes and treatment, the google cloud function, a serverless solution, was used to run the pipeline.  
+The cloud function was started and scheduled by workflows programmed to start the scrapy pipeline once daily.  
+Cloud function was set to save the scraped data in the big query database already cleaned.  
+The app used here for deployment was streamlit, which access big query to get the data and show it to the final user.  
+The final user can access all the data scraped and apply several filters to improve your search job.  
+A technique of spacing requests every 10 seconds was used to avoid the necessity to use proxy services.  
+In this way, the total daily processing time cost generated a lower price than hiring a proxy provider service.  
+
+![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/app/images/01.jpg)  
+
 
 ## Steps  
 
