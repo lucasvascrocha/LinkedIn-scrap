@@ -45,7 +45,7 @@ def main():
 
     main_menu_items = OrderedDict()
     main_menu_items["How it works"] = how_it_works
-    main_menu_items["Build a model"] = build_model
+    #main_menu_items["Build a model"] = build_model
     main_menu_items["Historical data"] = historical_page
 
     chart_menu = []
