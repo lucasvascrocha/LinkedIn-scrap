@@ -33,7 +33,7 @@ The final user can access all the data scraped and apply several filters to impr
 A technique of spacing requests every 10 seconds was used to avoid the necessity to use proxy services.  
 In this way, the total daily processing time cost generated a lower price than hiring a proxy provider service.  
 
-![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/app/images/01.jpg)  
+![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_03.jpg)   
 
 
 ## Steps  
