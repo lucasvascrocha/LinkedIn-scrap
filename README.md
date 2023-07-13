@@ -1,5 +1,8 @@
 # LinkedIn-scrap
-Scraping details of jobs and developing a personal filter for better matches
+Scraping details of jobs and developing a personal filter for better matches  
+Link to solution: https://search-job.streamlit.app/  
+
+
 
 * Context: 
 Given the significant number of jobs on the LinkedIn site, it isn't easy to do an accurate search.  
