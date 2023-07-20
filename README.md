@@ -3,8 +3,8 @@ Scraping details of jobs and developing a personal filter for better matches
 Link to solution: https://search-job.streamlit.app/  
 
 - [Context](#About)
-  - [Files-in-the-repository](#Files in the repository)
-- [Questions-that-helped-with-the-architecture-and-scope-phase](#Questions that helped with the architecture and scope phase)
+  - [Files-in-the-repository](#Files-in-the-repository)
+- [Questions-that-helped-with-the-architecture-and-scope-phase](#Questions-that-helped-with-the-architecture-and-scope-phase)
 
 
 # About
