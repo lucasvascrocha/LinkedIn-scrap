@@ -46,7 +46,7 @@ The final user can access all the data scraped and apply several filters to impr
 A technique of spacing requests every 10 seconds was used to avoid the necessity to use proxy services.  
 In this way, the total daily processing time cost generated a lower price than hiring a proxy provider service guaranteeing the scraping of all data needed.  
 
-![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_03.jpg)   
+![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_3.jpg)   
 
 
 # Files in the repository
@@ -160,8 +160,8 @@ Repository structure:
 
 ### Data extraction
 
- ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_01.jpg)  
- ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_02.jpg)  
+ ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_1.jpg)  
+ ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_2.jpg)  
 
 1. **What data fields do I want extracted?**  
     1. job title  
