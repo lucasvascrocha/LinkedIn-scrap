@@ -1,3 +1,0 @@
-functions-framework==3.*
-Scrapy==2.7.1
-pandas==1.5.3

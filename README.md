@@ -2,9 +2,17 @@
 Scraping details of jobs and developing a personal filter for better matches  
 Link to solution: https://search-job.streamlit.app/  
 
+- [Context](#About)
+  - [Files in the repository](#Files in the repository)
+- [Instructions](#instructions)
+- [Interface](#interface)
+- [Acknowledgments](#acknowledgments)
+
+# About
+
 * Used in this solution:  
-Scrapy | nltk | Spacy |  GCP | google cloud function | google workflows | Streamlit |    
-NLP | Machine learning | Ruled-based extraction entities | EDA   
+Scrapy | nltk | Spacy | google cloud function | google workflows | Streamlit |    
+NLP | Ruled-based extraction entities (NER)   
 
 * Context:   
 Given the significant number of jobs on the LinkedIn site, it isn't easy to do an accurate search.  
@@ -42,7 +50,52 @@ In this way, the total daily processing time cost generated a lower price than h
 ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_03.jpg)   
 
 
-## Steps  
+## Files in the repository
+Repository structure:
+
+- app
+  - .steamlit  
+    - config.toml  
+  - images 
+    - 01.jpg  
+  - mypages  
+    - historical_page.py
+    - how_it_works.py
+  - utils  
+    - functions.py
+    - login.py
+    - style.py
+  - .gitignore 
+  - App.py
+  - Procfile
+  - README.md
+  - requirements.txt
+  - setup.sh
+- google-cloud
+  - analysis.ipynb
+  - linkedin.py
+  - main.py
+  - personalized_ner.py
+  - personalized_ner.jsonl
+  - linkedin_requirements.txt
+  - personalized_ner_requirements
+- jobsearch
+  - jobsearch
+    - spiders
+        - __init__.py
+        - linkedin.py
+    - __init__.py
+    - items.py
+    - middlewares.py
+    - pipelines.py
+    - settings.py
+  - scrapy.cfg
+- .gitignore
+- README.md
+- requirements.txt
+
+
+## Questions that helped with the architecture and scope phase  
 
 ### **Step 1:** Define your data requirements
 

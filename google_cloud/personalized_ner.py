@@ -26,14 +26,37 @@ import jsonlines
 
 @functions_framework.http
 def ner_personalized(request):
-    """Get ids for query in bigquery in a all table joined.
+    """
+    Endpoint function for Named Entity Recognition (NER) with personalized patterns.
 
-    Args:
-        input (tuple): JSON with id (unique id from Pipedrive)
+    This function is an HTTP endpoint designed for Named Entity Recognition (NER) using
+    personalized patterns. It takes an HTTP request as input, processes the data, and 
+    performs NER using the 'spacy_extract' function. The results are saved to a BigQuery 
+    table using the 'save_in_bq' function.
+
+    Parameters:
+        request (flask.Request): An HTTP request object containing data to be processed.
 
     Returns:
-        json: JSON with data consulted in bigquery
+        str: A string indicating the completion of the NER process ('finish').
+
+    Requirements:
+        - The function requires the 'flask', 'google-cloud-bigquery', 'pandas', and 'spacy' 
+          libraries to be installed.
+        - The 'read_bq_table', 'spacy_extract', and 'save_in_bq' functions must be defined 
+          and accessible.
+
+    Note:
+        - The function uses the 'flask' library for HTTP request handling.
+        - The 'spacy_extract' function is used for NER with personalized patterns.
+        - The 'read_bq_table' function is used to fetch data from a specified BigQuery table.
+        - The 'save_in_bq' function is used to save the NER results to a BigQuery table.
+        - The 'query_result' DataFrame is obtained from the 'read_bq_table' function, 
+          processed using 'spacy_extract', and then modified (dropping 'clean_description' 
+          column and renaming 'description' to 'description_full') before being saved to 
+          BigQuery.
     """
+
     
     request_json = request.get_json(silent=True)
     request_args = request.args
@@ -48,17 +71,34 @@ def ner_personalized(request):
 
     save_in_bq(query_result)
     
-    #passing the order of the columns to preserve sort columns
-    #df_transposed = query_result.T.reset_index().reset_index()
-
-    #result = df_transposed.to_json(orient="records")
-    #output = json.loads(result)
-
-    #return jsonify(output)
     return 'finish'
 
-
 def save_in_bq(df_to_save_in_cloud):
+    """
+    Saves a DataFrame to a BigQuery table in the 'teste-315517' project.
+
+    This function takes a DataFrame 'df_to_save_in_cloud' and saves it to a specified
+    BigQuery table named 'ner_from_linkedin' in the 'teste-315517' project.
+
+    Parameters:
+        df_to_save_in_cloud (pandas.DataFrame): The DataFrame to be saved to BigQuery.
+
+    Requirements:
+        - The function requires the 'google-cloud-bigquery' library to be installed.
+        - A 'credentials.json' file with valid Google Cloud service account credentials 
+          must be present in the same directory as this script.
+        - The 'df_to_save_in_cloud' DataFrame should be properly formatted and have 
+          data that can be written to BigQuery.
+
+    Note:
+        - The function uses the 'google-cloud-bigquery' library and the 'pandas' library.
+        - The 'project_id' is set to 'teste-315517', which needs to be changed to the 
+          correct project ID.
+        - The 'table_id' is set to 'teste-315517.teste.ner_from_linkedin', which needs 
+          to be updated with the desired BigQuery dataset and table name.
+        - The function converts all data in the 'df_to_save_in_cloud' DataFrame to 
+          strings before saving to avoid writing problems in BigQuery.
+    """
     google_credentials = service_account.Credentials.from_service_account_file(
     'credentials.json')
     project_id = 'teste-315517'
@@ -70,29 +110,63 @@ def save_in_bq(df_to_save_in_cloud):
     #transform everything in string for avoid problemns in bigquery writing
     df = df_to_save_in_cloud.astype(str)
 
-    job = bigquery_client.load_table_from_dataframe(
+    job = bq_client.load_table_from_dataframe(
     df, table_id)
 
 
 def spacy_extract(query_result):
+    """
+    Extracts entities from text data using spaCy's NER (Named Entity Recognition) model.
 
-    # # Verificar se o modelo 'en_core_web_lg' está instalado
+    This function processes the 'clean_description' column from the input DataFrame 
+    'query_result', which contains text data. It uses spaCy's 'en_core_web_lg' language 
+    model, which should be downloaded and installed if not available.
 
-    # Caso não esteja instalado, fazer o download e instalação
+    The function performs the following steps:
+    1. Loads the 'en_core_web_lg' model from spaCy.
+    2. Adds a personalized NER model from a JSONL file for additional entity recognition.
+    3. Cleans the text data in the 'clean_description' column.
+    4. Extracts entities (skills, contracts, educations, constraints) from the cleaned text.
+    5. Extracts years of experience from the text using a regular expression pattern.
+    6. Formats the extracted entities and returns the resulting DataFrame.
+
+    Parameters:
+        query_result (pandas.DataFrame): A DataFrame containing the 'clean_description' 
+                                         column with text data to be processed.
+
+    Returns:
+        pandas.DataFrame: A DataFrame with the extracted entities, including separate 
+                          columns for skills, contracts, educations, and constraints, 
+                          along with a 'yrs_experience' column for years of experience.
+
+    Requirements:
+        - The function requires the 'spacy' library and the 'en_core_web_lg' model to be 
+          installed. If not available, the function will attempt to download and install 
+          the 'en_core_web_lg' model.
+        - The function depends on the 'clean_description' column in the input DataFrame 
+          'query_result' to be present and properly cleaned.
+
+    Note:
+        - The 'en_core_web_lg' model is used for NER and language processing.
+        - The 'personalized_ner.jsonl' file is expected to contain patterns for additional
+          entity recognition using spaCy's 'entity_ruler'.
+        - The function may extract entities such as skills, contracts, educations, and 
+          constraints from the text data.
+        - The function utilizes a regular expression pattern to extract years of experience
+          from the text, assuming it is in the format of numbers followed by 'years', 'year',
+          'yrs', or 'yr'.
+        - The resulting DataFrame will have cleaned text data in the 'clean_description' 
+          column and formatted entities in separate columns.
+    """
+
+    # download model
     subprocess.run(['python3', '-m', 'spacy', 'download', 'en_core_web_lg'])
-
-    #command = f'python -m spacy download en_core_web_lg'
-    #output = subprocess.check_output(command, shell=True)
-    #command = ["pip3", "install", "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz"]
-    #subprocess.run(command, check=True)
     print('run subprocess')
     import en_core_web_lg
     nlp = en_core_web_lg.load()
-    #nlp = spacy.load('en_core_web_sm')
     print('loaded mdoel')
 
     #NER model personalized
-    #nlp = spacy.load("en_core_web_sm")
     skill_pattern_path = "personalized_ner.jsonl"
     #Entity Ruler
     ruler = nlp.add_pipe("entity_ruler")
@@ -134,6 +208,31 @@ def spacy_extract(query_result):
     return data
 
 def read_bq_table():
+    """
+    Reads data from a BigQuery table using the Google Cloud SDK.
+
+    This function reads data from a specified BigQuery table named 'raw_from_linkedin'
+    in the 'teste-315517' project. It retrieves data for the current date, specifically
+    the columns 'now_datetime', 'link', and 'description'.
+
+    Returns:
+        pandas.DataFrame: A DataFrame containing the query result with columns 
+                          'now_datetime', 'link', and 'description'.
+
+    Requirements:
+        - The function requires the 'google-cloud-bigquery' library to be installed.
+        - A 'credentials.json' file with valid Google Cloud service account credentials 
+          must be present in the same directory as this script.
+
+    Note:
+        - The function uses the 'google-cloud-bigquery' library and the 'pandas' library.
+        - The 'project_id' is set to 'teste-315517', which needs to be changed to the 
+          correct project ID.
+        - The table name 'raw_from_linkedin' should exist in the specified BigQuery 
+          project and dataset.
+        - The function executes a SQL query to fetch data for the current date.
+        - The 'now_datetime' column is expected to contain timestamps.
+    """
     #Google credentials
     google_credentials = service_account.Credentials.from_service_account_file(
         'credentials.json')
