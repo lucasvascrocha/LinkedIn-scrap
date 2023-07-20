@@ -3,10 +3,9 @@ Scraping details of jobs and developing a personal filter for better matches
 Link to solution: https://search-job.streamlit.app/  
 
 - [Context](#About)
-  - [Files in the repository](#Files in the repository)
-- [Instructions](#instructions)
-- [Interface](#interface)
-- [Acknowledgments](#acknowledgments)
+  - [Files-in-the-repository](#Files in the repository)
+- [Questions-that-helped-with-the-architecture-and-scope-phase](#Questions that helped with the architecture and scope phase)
+
 
 # About
 
@@ -50,7 +49,7 @@ In this way, the total daily processing time cost generated a lower price than h
 ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_03.jpg)   
 
 
-## Files in the repository
+# Files in the repository
 Repository structure:
 
 - app
