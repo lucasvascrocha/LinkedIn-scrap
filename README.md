@@ -1,6 +1,6 @@
 # LinkedIn-scrap
 Scraping details of jobs and developing a personal filter for better matches  
-Link to solution: https://search-job.streamlit.app/  
+Link to solution: https://job-analyser.streamlit.app/ 
 
 - [About](#About)
 - [Files in the repository](#Files-in-the-repository)
@@ -92,6 +92,10 @@ Repository structure:
 - .gitignore
 - README.md
 - requirements.txt
+
+* NER analyze example:  
+
+![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_04.jpg)   
 
 
 # Questions that helped with the architecture and scope phase
