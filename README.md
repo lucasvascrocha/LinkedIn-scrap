@@ -95,7 +95,7 @@ Repository structure:
 
 * NER analyze example:  
 
-![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_04.png)   
+![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_04.jpg)   
 
 
 # Questions that helped with the architecture and scope phase
