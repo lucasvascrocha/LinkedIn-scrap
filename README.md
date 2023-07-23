@@ -44,6 +44,7 @@ Cloud function was set to save the scraped data and entities extracted in the bi
 The app used here for deployment was streamlit, which access big query to get the data already processed and show it to the final user.  
 The final user can access all the data scraped and apply several filters to improve your search job.  
 A technique of spacing requests every 10 seconds was used to avoid the necessity to use proxy services.  
+In the google cloud function, each instance is attributed with a different IP in each execution, avoiding IP block troubles.  
 In this way, the total daily processing time cost generated a lower price than hiring a proxy provider service guaranteeing the scraping of all data needed.  
 
 ![alt text](https://github.com/lucasvascrocha/LinkedIn-scrap/blob/main/LinkedIn_03.jpg)   
