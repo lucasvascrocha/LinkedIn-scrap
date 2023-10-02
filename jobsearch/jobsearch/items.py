@@ -7,6 +7,28 @@ import scrapy
 
 
 class JobsearchItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    """Storing information about individual Linkedin.
+
+    Args:
+        title (Field): 
+        location (Field): 
+        company_name (Field): 
+        position_name (Field): 
+        experience_required (Field): 
+        contract_type (Field): 
+        function_name (Field): 
+        company_sector (Field): 
+        description (Field): 
+        link (Field): 
+    """
+
+    title = scrapy.Field()
+    location = scrapy.Field()
+    company_name = scrapy.Field()
+    position_name = scrapy.Field()
+    experience_required = scrapy.Field()
+    contract_type = scrapy.Field()
+    function_name = scrapy.Field()
+    company_sector = scrapy.Field()
+    description = scrapy.Field()
+    link = scrapy.Field()

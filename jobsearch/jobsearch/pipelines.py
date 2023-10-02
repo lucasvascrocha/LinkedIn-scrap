@@ -10,4 +10,7 @@ from itemadapter import ItemAdapter
 
 class JobsearchPipeline:
     def process_item(self, item, spider):
+
+        #adapter = ItemAdapter(item)
+
         return item
